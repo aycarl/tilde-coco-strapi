@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/17/2021 3:34:39 PM"
+    "x-generation-date": "02/17/2021 4:18:46 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3182,55 +3182,198 @@
           "nickname": {
             "type": "string"
           },
-          "description": {
+          "full_description": {
             "type": "string"
           },
-          "contactEmailAddress": {
+          "email": {
             "type": "string"
           },
-          "dataFounded": {
+          "date_founded": {
             "type": "string",
             "format": "date"
           },
-          "contactPhoneNumber": {
+          "phone_number": {
             "type": "string"
           },
           "location": {
             "type": "string"
           },
-          "meetingHours": {
-            "type": "string"
-          },
-          "meetingDays": {
-            "type": "string"
-          },
-          "meetingVenue": {
-            "type": "string"
-          },
-          "membershipCriteriaRequired": {
+          "membership_criteria_required": {
             "type": "boolean"
           },
-          "membershipCriteriaDetails": {
+          "membership_criteria_details": {
             "type": "string"
           },
-          "membershipDuesRequired": {
+          "membership_dues_Required": {
             "type": "boolean"
           },
-          "membershipDuesDetails": {
+          "membership_dues_details": {
             "type": "string"
           },
-          "websiteUrl": {
+          "website_url": {
             "type": "string"
           },
-          "shortDescription": {
+          "short_description": {
             "type": "string"
           },
-          "organizationType": {
+          "organization_type": {
             "type": "string",
             "enum": [
               "club",
-              "resource"
+              "department"
             ]
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "ASUNM",
+                    "Academic",
+                    "Ethnic_or_Cultural",
+                    "Fraternity",
+                    "Sorority",
+                    "GPSA",
+                    "Graduate",
+                    "Honorary",
+                    "Military",
+                    "Political",
+                    "Recreation",
+                    "Religious",
+                    "Residence_Hall",
+                    "Service",
+                    "Special_Interest",
+                    "Sport"
+                  ]
+                }
+              }
+            }
+          },
+          "faculty_advisor": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "full_name": {
+                "type": "string"
+              },
+              "advisor_type": {
+                "type": "string"
+              },
+              "unm_advisor_job_title": {
+                "type": "string"
+              },
+              "department_of_employment": {
+                "type": "string"
+              },
+              "phone_number": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
+          },
+          "leadership_team": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "full_name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "academic_level": {
+                  "type": "string",
+                  "enum": [
+                    "undergraduate_freshman",
+                    "undergraduate_sophomore",
+                    "undergraduate_junior",
+                    "undergraduate_senior",
+                    "graduate_masters",
+                    "graduate_phd"
+                  ]
+                },
+                "program_of_study": {
+                  "type": "string"
+                },
+                "organization_position": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "meeting_information": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "meeting_hours": {
+                "type": "string"
+              },
+              "meeting_days": {
+                "type": "string"
+              },
+              "meeting_venue": {
+                "type": "string"
+              }
+            }
+          },
+          "members": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "phone_number": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "published_at": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           },
           "published_at": {
             "type": "string",
@@ -3246,55 +3389,170 @@
           "nickname": {
             "type": "string"
           },
-          "description": {
+          "full_description": {
             "type": "string"
           },
-          "contactEmailAddress": {
+          "email": {
             "type": "string"
           },
-          "dataFounded": {
+          "date_founded": {
             "type": "string",
             "format": "date"
           },
-          "contactPhoneNumber": {
+          "phone_number": {
             "type": "string"
           },
           "location": {
             "type": "string"
           },
-          "meetingHours": {
-            "type": "string"
-          },
-          "meetingDays": {
-            "type": "string"
-          },
-          "meetingVenue": {
-            "type": "string"
-          },
-          "membershipCriteriaRequired": {
+          "membership_criteria_required": {
             "type": "boolean"
           },
-          "membershipCriteriaDetails": {
+          "membership_criteria_details": {
             "type": "string"
           },
-          "membershipDuesRequired": {
+          "membership_dues_Required": {
             "type": "boolean"
           },
-          "membershipDuesDetails": {
+          "membership_dues_details": {
             "type": "string"
           },
-          "websiteUrl": {
+          "website_url": {
             "type": "string"
           },
-          "shortDescription": {
+          "short_description": {
             "type": "string"
           },
-          "organizationType": {
+          "organization_type": {
             "type": "string",
             "enum": [
               "club",
-              "resource"
+              "department"
             ]
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string",
+                  "enum": [
+                    "ASUNM",
+                    "Academic",
+                    "Ethnic_or_Cultural",
+                    "Fraternity",
+                    "Sorority",
+                    "GPSA",
+                    "Graduate",
+                    "Honorary",
+                    "Military",
+                    "Political",
+                    "Recreation",
+                    "Religious",
+                    "Residence_Hall",
+                    "Service",
+                    "Special_Interest",
+                    "Sport"
+                  ]
+                }
+              }
+            }
+          },
+          "faculty_advisor": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "full_name": {
+                "type": "string"
+              },
+              "advisor_type": {
+                "type": "string"
+              },
+              "unm_advisor_job_title": {
+                "type": "string"
+              },
+              "department_of_employment": {
+                "type": "string"
+              },
+              "phone_number": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            }
+          },
+          "leadership_team": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "full_name": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "academic_level": {
+                  "type": "string",
+                  "enum": [
+                    "undergraduate_freshman",
+                    "undergraduate_sophomore",
+                    "undergraduate_junior",
+                    "undergraduate_senior",
+                    "graduate_masters",
+                    "graduate_phd"
+                  ]
+                },
+                "program_of_study": {
+                  "type": "string"
+                },
+                "organization_position": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "meeting_information": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "meeting_hours": {
+                "type": "string"
+              },
+              "meeting_days": {
+                "type": "string"
+              },
+              "meeting_venue": {
+                "type": "string"
+              }
+            }
+          },
+          "members": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
