@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_organization_meetings",
+  "info": {
+    "name": "Meetings",
+    "icon": "calendar-alt"
+  },
+  "options": {},
+  "attributes": {
+    "meeting_hours": {
+      "type": "string"
+    },
+    "meeting_days": {
+      "type": "string"
+    },
+    "meeting_venue": {
+      "type": "string"
+    }
+  }
+}

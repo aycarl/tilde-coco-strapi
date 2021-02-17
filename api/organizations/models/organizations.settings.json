@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "organizations",
+  "collectionName": "organization",
   "info": {
-    "name": "organizations",
+    "name": "organization",
     "description": ""
   },
   "options": {
@@ -20,8 +20,51 @@
     "description": {
       "type": "string"
     },
-    "emailAddress": {
+    "contactEmailAddress": {
       "type": "email"
+    },
+    "dataFounded": {
+      "type": "date"
+    },
+    "contactPhoneNumber": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "meetingHours": {
+      "type": "string"
+    },
+    "meetingDays": {
+      "type": "string"
+    },
+    "meetingVenue": {
+      "type": "string"
+    },
+    "membershipCriteriaRequired": {
+      "type": "boolean"
+    },
+    "membershipCriteriaDetails": {
+      "type": "string"
+    },
+    "membershipDuesRequired": {
+      "type": "boolean"
+    },
+    "membershipDuesDetails": {
+      "type": "string"
+    },
+    "websiteUrl": {
+      "type": "string"
+    },
+    "shortDescription": {
+      "type": "string"
+    },
+    "organizationType": {
+      "type": "enumeration",
+      "enum": [
+        "club",
+        "resource"
+      ]
     }
   }
 }

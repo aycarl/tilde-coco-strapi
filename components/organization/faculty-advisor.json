@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_organization_faculty_advisors",
+  "info": {
+    "name": "Faculty Advisor",
+    "icon": "user-alt"
+  },
+  "options": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "advisor_type": {
+      "type": "string"
+    },
+    "unm_advisor_job_title": {
+      "type": "string"
+    },
+    "department_of_employment": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_organization_leaderships",
+  "info": {
+    "name": "leadership",
+    "icon": "address-book",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "full_name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "academic_level": {
+      "type": "enumeration",
+      "enum": [
+        "undergraduate_freshman",
+        "undergraduate_sophomore",
+        "undergraduate_junior",
+        "undergraduate_senior",
+        "graduate_masters",
+        "graduate_phd"
+      ]
+    },
+    "program_of_study": {
+      "type": "string"
+    },
+    "organization_position": {
+      "type": "string"
+    }
+  }
+}
