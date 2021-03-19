@@ -79,6 +79,10 @@
     },
     "members": {
       "collection": "student"
+    },
+    "events": {
+      "via": "organization",
+      "collection": "event"
     }
   }
 }

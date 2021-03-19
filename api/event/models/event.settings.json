@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event",
+  "info": {
+    "name": "Event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ORGANIZER": {
+      "type": "string"
+    },
+    "DTSTART": {
+      "type": "string"
+    },
+    "DTEND": {
+      "type": "string"
+    },
+    "DTSTAMP": {
+      "type": "string"
+    },
+    "LOCATION": {
+      "type": "string"
+    },
+    "SUMMARY": {
+      "type": "string"
+    },
+    "DESCRIPTION": {
+      "type": "string"
+    },
+    "CATEGORIES": {
+      "type": "string"
+    },
+    "CONTACT": {
+      "type": "string"
+    },
+    "CLASS": {
+      "type": "string"
+    },
+    "UID": {
+      "type": "string"
+    },
+    "organization": {
+      "model": "organizations",
+      "via": "events"
+    }
+  }
+}

@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/organizations": {
+    "/events": {
       "get": {
         "deprecated": false,
-        "description": "Find all the organizations's records",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve organizations document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Organizations"
+                    "$ref": "#/components/schemas/Event"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Organizations"
+          "Event"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new organizations record",
+        "description": "Create a new record",
         "responses": {
           "200": {
-            "description": "Retrieve organizations document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organizations"
+                  "$ref": "#/components/schemas/Event"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Organizations"
+          "Event"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrganizations"
+                "$ref": "#/components/schemas/NewEvent"
               }
             }
           }
         }
       }
     },
-    "/organizations/count": {
+    "/events/count": {
       "get": {
         "deprecated": false,
-        "description": "Retrieve the numver of organizations documents",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve organizations document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Organizations"
+          "Event"
         ],
         "parameters": []
       }
     },
-    "/organizations/{id}": {
+    "/events/{id}": {
       "get": {
         "deprecated": false,
-        "description": "Find one organizations record",
+        "description": "",
         "responses": {
           "200": {
-            "description": "Retrieve organizations document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organizations"
+                  "$ref": "#/components/schemas/Event"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Organizations"
+          "Event"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a single organizations record",
+        "description": "Update a record",
         "responses": {
           "200": {
-            "description": "Retrieve organizations document(s)",
+            "description": "response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Organizations"
+                  "$ref": "#/components/schemas/Event"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Organizations"
+          "Event"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewOrganizations"
+                "$ref": "#/components/schemas/NewEvent"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a single organizations record",
+        "description": "Delete a record",
         "responses": {
           "200": {
-            "description": "deletes a single organizations based on the ID supplied",
+            "description": "deletes a single record based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Organizations"
+          "Event"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Organizations": {
+      "Event": {
         "required": [
           "id"
         ],
@@ -522,90 +522,40 @@
           "id": {
             "type": "string"
           },
-          "name": {
+          "ORGANIZER": {
             "type": "string"
           },
-          "nickname": {
+          "DTSTART": {
             "type": "string"
           },
-          "full_description": {
+          "DTEND": {
             "type": "string"
           },
-          "email": {
+          "DTSTAMP": {
             "type": "string"
           },
-          "date_founded": {
-            "type": "string",
-            "format": "date"
-          },
-          "phone_number": {
+          "LOCATION": {
             "type": "string"
           },
-          "location": {
+          "SUMMARY": {
             "type": "string"
           },
-          "membership_criteria_required": {
-            "type": "boolean"
-          },
-          "membership_criteria_details": {
+          "DESCRIPTION": {
             "type": "string"
           },
-          "membership_dues_Required": {
-            "type": "boolean"
-          },
-          "membership_dues_details": {
+          "CATEGORIES": {
             "type": "string"
           },
-          "website_url": {
+          "CONTACT": {
             "type": "string"
           },
-          "short_description": {
+          "CLASS": {
             "type": "string"
           },
-          "organization_type": {
-            "type": "string",
-            "enum": [
-              "club",
-              "department"
-            ]
+          "UID": {
+            "type": "string"
           },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string",
-                  "enum": [
-                    "ASUNM",
-                    "Academic",
-                    "Ethnic_or_Cultural",
-                    "Fraternity",
-                    "Sorority",
-                    "GPSA",
-                    "Graduate",
-                    "Honorary",
-                    "Military",
-                    "Political",
-                    "Recreation",
-                    "Religious",
-                    "Residence_Hall",
-                    "Service",
-                    "Special_Interest",
-                    "Sport"
-                  ]
-                }
-              }
-            }
-          },
-          "faculty_advisor": {
-            "type": "object",
+          "organization": {
             "required": [
               "id"
             ],
@@ -613,102 +563,68 @@
               "id": {
                 "type": "string"
               },
-              "full_name": {
+              "name": {
                 "type": "string"
               },
-              "advisor_type": {
+              "nickname": {
                 "type": "string"
               },
-              "unm_advisor_job_title": {
+              "full_description": {
                 "type": "string"
               },
-              "department_of_employment": {
+              "email": {
+                "type": "string"
+              },
+              "date_founded": {
                 "type": "string"
               },
               "phone_number": {
                 "type": "string"
               },
-              "email": {
+              "location": {
                 "type": "string"
-              }
-            }
-          },
-          "leadership_team": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "full_name": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "academic_level": {
-                  "type": "string",
-                  "enum": [
-                    "undergraduate_freshman",
-                    "undergraduate_sophomore",
-                    "undergraduate_junior",
-                    "undergraduate_senior",
-                    "graduate_masters",
-                    "graduate_phd"
-                  ]
-                },
-                "program_of_study": {
-                  "type": "string"
-                },
-                "organization_position": {
+              },
+              "membership_criteria_required": {
+                "type": "boolean"
+              },
+              "membership_criteria_details": {
+                "type": "string"
+              },
+              "membership_dues_Required": {
+                "type": "boolean"
+              },
+              "membership_dues_details": {
+                "type": "string"
+              },
+              "website_url": {
+                "type": "string"
+              },
+              "short_description": {
+                "type": "string"
+              },
+              "organization_type": {
+                "type": "string"
+              },
+              "categories": {
+                "type": "component"
+              },
+              "faculty_advisor": {
+                "type": "component"
+              },
+              "leadership_team": {
+                "type": "component"
+              },
+              "meeting_information": {
+                "type": "component"
+              },
+              "members": {
+                "type": "string"
+              },
+              "events": {
+                "type": "array",
+                "items": {
                   "type": "string"
                 }
-              }
-            }
-          },
-          "meeting_information": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "meeting_hours": {
-                "type": "string"
-              },
-              "meeting_days": {
-                "type": "string"
-              },
-              "meeting_venue": {
-                "type": "string"
-              }
-            }
-          },
-          "members": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "first_name": {
-                "type": "string"
-              },
-              "last_name": {
-                "type": "string"
-              },
-              "phone_number": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
               },
               "published_at": {
                 "type": "string"
@@ -721,248 +637,49 @@
               }
             }
           },
-          "events": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "ORGANIZER": {
-                  "type": "string"
-                },
-                "DTSTART": {
-                  "type": "string"
-                },
-                "DTEND": {
-                  "type": "string"
-                },
-                "DTSTAMP": {
-                  "type": "string"
-                },
-                "LOCATION": {
-                  "type": "string"
-                },
-                "SUMMARY": {
-                  "type": "string"
-                },
-                "DESCRIPTION": {
-                  "type": "string"
-                },
-                "CATEGORIES": {
-                  "type": "string"
-                },
-                "CONTACT": {
-                  "type": "string"
-                },
-                "CLASS": {
-                  "type": "string"
-                },
-                "UID": {
-                  "type": "string"
-                },
-                "organization": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "published_at": {
             "type": "string",
             "format": "date-time"
           }
         }
       },
-      "NewOrganizations": {
+      "NewEvent": {
         "properties": {
-          "name": {
+          "ORGANIZER": {
             "type": "string"
           },
-          "nickname": {
+          "DTSTART": {
             "type": "string"
           },
-          "full_description": {
+          "DTEND": {
             "type": "string"
           },
-          "email": {
+          "DTSTAMP": {
             "type": "string"
           },
-          "date_founded": {
-            "type": "string",
-            "format": "date"
-          },
-          "phone_number": {
+          "LOCATION": {
             "type": "string"
           },
-          "location": {
+          "SUMMARY": {
             "type": "string"
           },
-          "membership_criteria_required": {
-            "type": "boolean"
-          },
-          "membership_criteria_details": {
+          "DESCRIPTION": {
             "type": "string"
           },
-          "membership_dues_Required": {
-            "type": "boolean"
-          },
-          "membership_dues_details": {
+          "CATEGORIES": {
             "type": "string"
           },
-          "website_url": {
+          "CONTACT": {
             "type": "string"
           },
-          "short_description": {
+          "CLASS": {
             "type": "string"
           },
-          "organization_type": {
-            "type": "string",
-            "enum": [
-              "club",
-              "department"
-            ]
-          },
-          "categories": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "title": {
-                  "type": "string",
-                  "enum": [
-                    "ASUNM",
-                    "Academic",
-                    "Ethnic_or_Cultural",
-                    "Fraternity",
-                    "Sorority",
-                    "GPSA",
-                    "Graduate",
-                    "Honorary",
-                    "Military",
-                    "Political",
-                    "Recreation",
-                    "Religious",
-                    "Residence_Hall",
-                    "Service",
-                    "Special_Interest",
-                    "Sport"
-                  ]
-                }
-              }
-            }
-          },
-          "faculty_advisor": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "full_name": {
-                "type": "string"
-              },
-              "advisor_type": {
-                "type": "string"
-              },
-              "unm_advisor_job_title": {
-                "type": "string"
-              },
-              "department_of_employment": {
-                "type": "string"
-              },
-              "phone_number": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              }
-            }
-          },
-          "leadership_team": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "full_name": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "academic_level": {
-                  "type": "string",
-                  "enum": [
-                    "undergraduate_freshman",
-                    "undergraduate_sophomore",
-                    "undergraduate_junior",
-                    "undergraduate_senior",
-                    "graduate_masters",
-                    "graduate_phd"
-                  ]
-                },
-                "program_of_study": {
-                  "type": "string"
-                },
-                "organization_position": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "meeting_information": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "meeting_hours": {
-                "type": "string"
-              },
-              "meeting_days": {
-                "type": "string"
-              },
-              "meeting_venue": {
-                "type": "string"
-              }
-            }
-          },
-          "members": {
+          "UID": {
             "type": "string"
           },
-          "events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "organization": {
+            "type": "string"
           },
           "published_at": {
             "type": "string",
@@ -980,7 +697,7 @@
   },
   "tags": [
     {
-      "name": "Organizations"
+      "name": "Event"
     }
   ]
 }
