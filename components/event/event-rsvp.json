@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_event_event_rsvps",
+  "info": {
+    "name": "Event RSVP",
+    "icon": "calendar-day",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "yes",
+        "no",
+        "maybe"
+      ],
+      "default": "maybe"
+    },
+    "event": {
+      "model": "event"
+    },
+    "student": {
+      "model": "student"
+    }
+  }
+}

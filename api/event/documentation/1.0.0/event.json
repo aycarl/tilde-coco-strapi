@@ -603,7 +603,11 @@
                 "type": "string"
               },
               "organization_type": {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "club",
+                  "department"
+                ]
               },
               "categories": {
                 "type": "component"
@@ -618,7 +622,10 @@
                 "type": "component"
               },
               "members": {
-                "type": "string"
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "events": {
                 "type": "array",
@@ -634,6 +641,121 @@
               },
               "updated_by": {
                 "type": "string"
+              }
+            }
+          },
+          "rsvps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "default": "maybe",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "maybe"
+                  ]
+                },
+                "event": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "ORGANIZER": {
+                      "type": "string"
+                    },
+                    "DTSTART": {
+                      "type": "string"
+                    },
+                    "DTEND": {
+                      "type": "string"
+                    },
+                    "DTSTAMP": {
+                      "type": "string"
+                    },
+                    "LOCATION": {
+                      "type": "string"
+                    },
+                    "SUMMARY": {
+                      "type": "string"
+                    },
+                    "DESCRIPTION": {
+                      "type": "string"
+                    },
+                    "CATEGORIES": {
+                      "type": "string"
+                    },
+                    "CONTACT": {
+                      "type": "string"
+                    },
+                    "CLASS": {
+                      "type": "string"
+                    },
+                    "UID": {
+                      "type": "string"
+                    },
+                    "organization": {
+                      "type": "string"
+                    },
+                    "rsvps": {
+                      "type": "component"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "student": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "phone_number": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "my_rsvps": {
+                      "type": "component"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                }
               }
             }
           },
@@ -680,6 +802,121 @@
           },
           "organization": {
             "type": "string"
+          },
+          "rsvps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string",
+                  "default": "maybe",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "maybe"
+                  ]
+                },
+                "event": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "ORGANIZER": {
+                      "type": "string"
+                    },
+                    "DTSTART": {
+                      "type": "string"
+                    },
+                    "DTEND": {
+                      "type": "string"
+                    },
+                    "DTSTAMP": {
+                      "type": "string"
+                    },
+                    "LOCATION": {
+                      "type": "string"
+                    },
+                    "SUMMARY": {
+                      "type": "string"
+                    },
+                    "DESCRIPTION": {
+                      "type": "string"
+                    },
+                    "CATEGORIES": {
+                      "type": "string"
+                    },
+                    "CONTACT": {
+                      "type": "string"
+                    },
+                    "CLASS": {
+                      "type": "string"
+                    },
+                    "UID": {
+                      "type": "string"
+                    },
+                    "organization": {
+                      "type": "string"
+                    },
+                    "rsvps": {
+                      "type": "component"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "student": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "first_name": {
+                      "type": "string"
+                    },
+                    "last_name": {
+                      "type": "string"
+                    },
+                    "phone_number": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "my_rsvps": {
+                      "type": "component"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
           },
           "published_at": {
             "type": "string",

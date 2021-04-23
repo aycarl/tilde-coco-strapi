@@ -1,8 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "students",
+  "collectionName": "student",
   "info": {
-    "name": "Student"
+    "name": "Student",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -21,6 +22,11 @@
     },
     "email": {
       "type": "email"
+    },
+    "my_rsvps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.event-rsvp"
     }
   }
 }

@@ -47,6 +47,11 @@
     "organization": {
       "model": "organizations",
       "via": "events"
+    },
+    "rsvps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "event.event-rsvp"
     }
   }
 }
